@@ -6,7 +6,7 @@
 
         <title>Website with htmx!!</title>
         <link rel="stylesheet" type="text/css" href="styles.css" />
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <script
             src="https://unpkg.com/htmx.org@1.9.5"
             integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO"
@@ -28,7 +28,7 @@
             </ul>
 
             <form hx-post="/messages" hx-trigger="submit" hx-target="#result-div" hx-swap="settle:1s">
-                <input id="q" type="search" name="q" placeholder="Search query" />
+                <input id="field" type="search" name="field" placeholder="Search query" />
                 <input type="submit" value="Go!" />
                 <div id="result-div"></div>
             </form>
