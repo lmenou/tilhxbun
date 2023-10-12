@@ -9,3 +9,5 @@ This project contains a simple server and simples client files in order to play
 with [bun](https://bun.sh/) and [htmx](https://htmx.org/).
 
 ## TIL for myself only
+
+Use of the very nice ArXiV api.
