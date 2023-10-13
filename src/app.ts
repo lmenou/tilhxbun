@@ -29,12 +29,12 @@ app.get('/', (context) => (context.set.redirect = '/public/index.html'));
 
 app.post('/query', (context) => {
     const query: URL = queryMaker(context.body as CustomFormData);
+    console.log(query);
     fetch(query)
         .then((response) => response.text())
         .then((data) => {
             const parser = new XMLParser();
             let result = parser.parse(data);
-            console.log(result);
         });
     return `<p>${(context.body as CustomFormData).author}</p>`;
 });

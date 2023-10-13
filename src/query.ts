@@ -32,10 +32,10 @@ const QUERY_URL = new URL('http://export.arxiv.org/api/query');
 
 export function queryMaker(formData: CustomFormData): URL {
     let query: URL = QUERY_URL;
-    const search_query = searchQueryMaker(formData);
-    query.searchParams.append('search_query', search_query);
-    query.searchParams.append('start', '0');
-    query.searchParams.append('max_result', '10');
+    let search_query = searchQueryMaker(formData);
+    query.searchParams.set('search_query', search_query);
+    query.searchParams.set('start', '0');
+    query.searchParams.set('max_result', '10');
     return query;
 }
 
