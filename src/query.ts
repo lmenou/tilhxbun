@@ -16,25 +16,31 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { Elysia } from 'elysia';
-import { staticPlugin } from '@elysiajs/static';
-import { XMLParser } from 'fast-xml-parser';
+export interface CustomFormData {
+    author: string;
+}
 
-import { CustomFormData } from './query';
-import { queryMaker } from './query';
+export interface QueryPrefix {
+    au: string;
+}
 
-export const app = new Elysia().use(staticPlugin());
+export const query_prefix = {
+    author: 'au',
+};
 
-app.get('/', (context) => (context.set.redirect = '/public/index.html'));
+const QUERY_URL = new URL('http://export.arxiv.org/api/query');
 
-app.post('/query', (context) => {
-    const query: URL = queryMaker(context.body as CustomFormData);
-    fetch(query)
-        .then((response) => response.text())
-        .then((data) => {
-            const parser = new XMLParser();
-            let result = parser.parse(data);
-            console.log(result);
-        });
-    return `<p>${(context.body as CustomFormData).author}</p>`;
-});
+export function queryMaker(formData: CustomFormData): URL {
+    let query: URL = QUERY_URL;
+    const search_query = searchQueryMaker(formData);
+    query.searchParams.append('search_query', search_query);
+    query.searchParams.append('start', '0');
+    query.searchParams.append('max_result', '10');
+    return query;
+}
+
+function searchQueryMaker(formData: CustomFormData): string {
+    let search_query: string = '';
+    search_query += `${query_prefix.author}:${formData.author}`;
+    return search_query;
+}
