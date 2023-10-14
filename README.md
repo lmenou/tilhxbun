@@ -13,3 +13,5 @@ with [bun](https://bun.sh/) and [htmx](https://htmx.org/).
 Use of the very nice ArXiV api. Before any use or further development, reading
 the [Terms of Use of the ArXiv API](https://info.arxiv.org/help/api/tou.html)
 is strongly recommended.
+
+Also, Thank you to arXiv for use of its open access interoperability.
