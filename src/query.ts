@@ -25,17 +25,15 @@ export interface QueryPrefix {
 }
 
 export const query_prefix = {
-    author: 'au',
+    author: 'all',
 };
 
-const QUERY_URL = new URL('http://export.arxiv.org/api/query');
+const QUERY_URL = 'http://export.arxiv.org/api/query';
 
 export function queryMaker(formData: CustomFormData): URL {
-    let query: URL = QUERY_URL;
+    let query: URL = new URL(QUERY_URL);
     let search_query = searchQueryMaker(formData);
-    query.searchParams.set('search_query', search_query);
-    query.searchParams.set('start', '0');
-    query.searchParams.set('max_result', '10');
+    query.searchParams.append('search_query', search_query);
     return query;
 }
 
