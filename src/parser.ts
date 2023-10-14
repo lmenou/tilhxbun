@@ -16,22 +16,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { Elysia } from 'elysia';
-import { staticPlugin } from '@elysiajs/static';
+import { XMLParser } from 'fast-xml-parser';
 
-import { CustomFormData } from './query';
-import { queryMaker } from './query';
-import { parse } from './parser';
-import { articles_list } from './articles';
-
-export const app = new Elysia().use(staticPlugin());
-
-app.get('/', (context) => (context.set.redirect = '/public/index.html'));
-
-app.post('/query', async (context) => {
-    const query: URL = queryMaker(context.body as CustomFormData);
-    const result = await fetch(query)
-        .then((response) => response.text())
-        .then((text) => parse(text));
-    return articles_list(result);
-});
+export function parse(text: string): Object {
+    const parser = new XMLParser();
+    return parser.parse(text);
+}

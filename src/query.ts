@@ -25,7 +25,7 @@ export interface QueryPrefix {
 }
 
 export const query_prefix = {
-    author: 'all',
+    author: 'au',
 };
 
 const QUERY_URL = 'http://export.arxiv.org/api/query';
@@ -34,6 +34,7 @@ export function queryMaker(formData: CustomFormData): URL {
     let query: URL = new URL(QUERY_URL);
     let search_query = searchQueryMaker(formData);
     query.searchParams.append('search_query', search_query);
+    query.searchParams.append('max_results', '3');
     return query;
 }
 

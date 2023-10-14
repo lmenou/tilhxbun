@@ -1,0 +1,9 @@
+<% if(articles) { %>
+  <ol>
+    <% articles.forEach(function(article) { %>
+      <%- include('article_item', { article: article }); %>
+    <% }); %>
+  </ol>
+<% } else { %>
+  <p>Nothing was found!</p>
+<% } %>

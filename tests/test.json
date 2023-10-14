@@ -1,0 +1,57 @@
+{ "articles": [
+    {
+        "id": "http://arxiv.org/abs/2302.12521v2",
+        "updated": "2023-04-14T07:34:53Z",
+        "published": "2023-02-24T09:13:27Z",
+        "title": "Physical interactions promote Turing patterns",
+        "summary": "Turing's mechanism is often invoked to explain periodic patterns in nature,\nalthough direct experimental support is scarce. Turing patterns form in\nreaction-diffusion systems when the activating species diffuse much slower than\nthe inhibiting species, and the involved reactions are highly non-linear. Such\nreactions can originate from co-operativity, whose physical interactions should\nalso affect diffusion. We here take direct interactions into account and show\nthat they strongly affect Turing patterns. We find that weak repulsion between\nthe activator and inhibitor can substantially lower the required differential\ndiffusivity and reaction non-linearity. In contrast, strong interactions can\ninduce phase separation, but the resulting length scale is still typically\ngoverned by the fundamental reaction-diffusion length scale. Taken together,\nour theory connects traditional Turing patterns with chemically active phase\nseparation, thus describing a wider range of systems. Moreover, we demonstrate\nthat even weak interactions affect patterns substantially, so they should be\nincorporated when modeling realistic systems.",
+        "author": [
+            { "name": "Lucas Menou" },
+            { "name": "Chengjie Luo" },
+            { "name": "David Zwicker" }
+        ],
+        "arxiv:comment": "5 pages, 5 figures, and appendix",
+        "link": ["", ""],
+        "arxiv:primary_category": "",
+        "category": ["", ""]
+    },
+    {
+        "id": "http://arxiv.org/abs/2110.03941v1",
+        "updated": "2021-10-08T07:24:08Z",
+        "published": "2021-10-08T07:24:08Z",
+        "title": "Stiffness heterogeneity of small viral capsids",
+        "summary": "Nanoindentation of viral capsids provides an efficient tool in order to probe\ntheir elastic properties. We investigate in the present work the various\nsources of stiffness heterogeneity as observed in Atomic Force Microscopy (AFM)\nexperiments. By combining experimental results with both numerical and\nanalytical modeling, we first show that for small viruses a position-dependent\nstiffness is observed. This effect is strong and has not been properly taken\ninto account previously. Moreover, we show that a geometrical model is able to\nreproduce this effect quantitatively. Our work suggests alternative ways of\nmeasuring stiffness heterogeneities on small viral capsids. This is illustrated\non two different viral capsids: Adeno Associated Virus serotype 8 (AAV8) and\nHepatitis B Virus (HBV with T=4). We discuss our results in the light of\ncontinuous elasticity modeling.",
+        "author": [
+            { "name": "Lucas Menou", "arxiv:affiliation": "Phys-ENS" },
+            {
+                "name": "Yeraldinne Carrasco-Salas",
+                "arxiv:affiliation": "Phys-ENS"
+            },
+            { "name": "Lauriane Lecoq", "arxiv:affiliation": "IBCP" },
+            { "name": "Anna Salvetti", "arxiv:affiliation": "Phys-ENS" },
+            {
+                "name": "Cendrine Faivre-Moskalenko",
+                "arxiv:affiliation": "Phys-ENS"
+            },
+            { "name": "Martin Castelnovo", "arxiv:affiliation": "Phys-ENS" }
+        ],
+        "arxiv:doi": "10.1103/PhysRevE.104.064408",
+        "link": ["", "", ""],
+        "arxiv:comment": "Physical Review E , American Physical Society (APS), In press",
+        "arxiv:primary_category": "",
+        "category": ""
+    },
+    {
+        "id": "http://arxiv.org/abs/astro-ph/0310016v1",
+        "updated": "2003-10-01T03:24:33Z",
+        "published": "2003-10-01T03:24:33Z",
+        "title": "The DIRECT Project",
+        "summary": "The DIRECT project aims to determine direct distances to two important\ngalaxies in the cosmological distance ladder -- M31 and M33 -- using detached\neclipsing binaries (DEBs) and Cepheids. I present an overview of the project\nand some results from follow-up observations.",
+        "author": { "name": "Lucas Macri" },
+        "arxiv:comment": "Invited talk (6 pages, 5 figures) to be published in the proceedings\n  of the IAU Colloquium 193, \"Variable stars in the Local Group\", D.W. Kurtz &\n  Karen Pollard, eds. A version with full-resolution figures can be obtained\n  from http://cfa-www.harvard.edu/~kstanek/DIRECT/macri_iau193.ps.gz",
+        "link": ["", ""],
+        "arxiv:primary_category": "",
+        "category": ""
+    }
+]
+}
