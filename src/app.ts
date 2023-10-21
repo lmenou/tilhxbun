@@ -22,9 +22,11 @@ import { staticPlugin } from '@elysiajs/static';
 import { CustomFormData } from './query';
 import { queryMaker } from './query';
 import { parse } from './parser';
-import { articles_list } from './articles';
+import { articles_list, storeArticles, Article } from './articles';
 
 export const app = new Elysia().use(staticPlugin());
+
+let store: Article[];
 
 app.get('/', (context) => (context.set.redirect = '/public/index.html'));
 
@@ -35,12 +37,14 @@ app.post('/query', async (context) => {
         const result = await fetch(query)
             .then((response) => response.text())
             .then((text) => parse(text));
+        store = storeArticles(result);
         return articles_list(result);
     } else {
         return '';
     }
 });
 
-app.post('/print', () => {
-    return '<p>Coucou</p>';
+app.post('/print/:id', ({ params: { id } }) => {
+    const abstract = store[parseInt(id)].summary;
+    return `<p id="abstract">${abstract}</p>`;
 });

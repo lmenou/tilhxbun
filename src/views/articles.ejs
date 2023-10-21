@@ -1,7 +1,9 @@
 <% if(articles) { %>
   <ol>
+    <% count = 0 %>
     <% articles.forEach(function(article) { %>
-      <%- include('article_item', { article: article }); %>
+      <%- include('article_item', { article: article, count: count }); %>
+      <% count += 1; %>
     <% }); %>
   </ol>
 <% } else { %>

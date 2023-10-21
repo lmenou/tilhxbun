@@ -21,6 +21,18 @@ const path = require('path');
 
 const prefix = import.meta.dir;
 
+export interface Author {
+    name: string;
+}
+
+export interface Article {
+    updated: string;
+    published: string;
+    title: string;
+    summary: string;
+    author: Author[];
+}
+
 export function articles_list(articles: any) {
     const articles_list = { articles: articles.feed.entry };
     const html = ejs.renderFile(
@@ -28,4 +40,20 @@ export function articles_list(articles: any) {
         articles_list
     );
     return html;
+}
+
+export function storeArticles(articles: any) {
+    const items = articles.feed.entry;
+    let store: Article[] = [];
+    for (const item of items) {
+        const article: Article = {
+            updated: item.updated,
+            published: item.published,
+            title: item.title,
+            summary: item.summary,
+            author: item.author,
+        };
+        store.push(article);
+    }
+    return store;
 }
