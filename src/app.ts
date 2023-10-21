@@ -29,9 +29,18 @@ export const app = new Elysia().use(staticPlugin());
 app.get('/', (context) => (context.set.redirect = '/public/index.html'));
 
 app.post('/query', async (context) => {
-    const query: URL = queryMaker(context.body as CustomFormData);
-    const result = await fetch(query)
-        .then((response) => response.text())
-        .then((text) => parse(text));
-    return articles_list(result);
+    const body = context.body as CustomFormData;
+    if (body.author !== '') {
+        const query: URL = queryMaker(context.body as CustomFormData);
+        const result = await fetch(query)
+            .then((response) => response.text())
+            .then((text) => parse(text));
+        return articles_list(result);
+    } else {
+        return '';
+    }
+});
+
+app.post('/print', () => {
+    return '<p>Coucou</p>';
 });

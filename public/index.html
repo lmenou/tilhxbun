@@ -32,7 +32,7 @@
                 hx-trigger="submit"
                 hx-target="#result-div"
             >
-            <label for="author">Search an author:</label>
+                <label for="author">Search an author:</label>
                 <input
                     id="author"
                     type="search"
@@ -40,8 +40,9 @@
                     placeholder="Search Author"
                 />
                 <input type="submit" value="Go!" />
-                <div id="result-div"></div>
+                <div hx-trigger="load" hx-post="/query" id="result-div"></div>
             </form>
+            <div id="abstract"></div>
         </nav>
 
         <main>
