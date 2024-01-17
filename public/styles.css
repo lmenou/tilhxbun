@@ -1,0 +1,33 @@
+body {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding-right: 46px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000;
+}
+
+li:target {
+    background-color: lightblue;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+a.listitem {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    display: block;
+}
+
+a.listitem:hover {
+    background-color: lightgray;
+    color: black;
+}

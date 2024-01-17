@@ -1,11 +1,11 @@
 <% if(articles) { %>
-  <ol>
+  <ul>
     <% count = 0 %>
     <% articles.forEach(function(article) { %>
       <%- include('article_item', { article: article, count: count }); %>
       <% count += 1; %>
     <% }); %>
-  </ol>
+  </ul>
 <% } else { %>
   <p>Nothing was found! - Or the ArXiV api may be down.</p>
 <% } %>
