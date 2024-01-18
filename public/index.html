@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
     <head>
         <meta charset="utf-8" />
@@ -19,6 +19,15 @@
             <h1>A website done with htmx!</h1>
         </header>
 
+        <h2>How to even use this ?</h2>
+
+        <p>
+            Simple search for an author on the input box below. If the Arxiv API
+            find some articles published by the latter, the first three
+            articles' titles will be displayed, clicking on them, will also
+            display their abstract.
+        </p>
+
         <nav>
             <form hx-post="/query" hx-trigger="submit" hx-target="#result-div">
                 <label for="author">Search an author:</label>
@@ -37,7 +46,14 @@
         <main>
             <article>
                 <h2>What is the point of all this ?</h2>
-                <p>The idea is to test new techs with htmx/bun and co.</p>
+                <p>
+                    The idea is to test new techs with
+                    <a href="https://htmx.org/">htmx</a>/<a
+                        href="https://bun.sh/"
+                        >bun</a
+                    >
+                    and co.
+                </p>
             </article>
         </main>
 
